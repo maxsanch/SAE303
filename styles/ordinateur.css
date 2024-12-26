@@ -347,7 +347,6 @@ h2 {
 
 .absoluteder {
     position: absolute;
-    width: 100%;
     transform-origin: top;
     top: 130%;
     background-color: #EAEAEA;

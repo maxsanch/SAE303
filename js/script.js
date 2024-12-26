@@ -283,3 +283,15 @@ document.querySelector('#asie2').innerHTML = '<b>' + moyenne_asie + ' %</b>'
 document.querySelector('#amenord2').innerHTML = '<b>' + moyenne_nord + ' %</b>'
 document.querySelector('#amesud2').innerHTML = '<b>' + moyenne_sud + ' %</b>'
 document.querySelector('#occeanie2').innerHTML = '<b>' + moyenne_occeanie + ' %</b>'
+
+
+// gérer le responsif sur les pays
+
+if(screen.width <= 620){
+    document.querySelector('#totaleurope').setAttribute('width', '103');
+    document.querySelector('#totalafrique').setAttribute('width', '60');
+    document.querySelector('#totalasie').setAttribute('width', '103');
+    document.querySelector('#totalamériquenord').setAttribute('width', '101');
+    document.querySelector('#totalamériquesud').setAttribute('width', '48');
+    document.querySelector('#totalocéanie').setAttribute('width', '103');
+}
