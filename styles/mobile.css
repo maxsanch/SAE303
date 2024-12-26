@@ -20,9 +20,6 @@ h2{
     min-height: 0vh;
 }
 
-.deroulant{
-    gap: 50px;
-}
 .parentcentre{
     margin-top: 0;
     margin-bottom: 30px;
@@ -42,14 +39,16 @@ h2{
     min-height: 30vh;
 }
 
-.categoriecentre{
-    grid-template-columns: 1fr 1fr;
-}
-
 .grid_2{
     display: block;
 }
 
 #polar{
     transform: scale(1.1);
+}
+
+.categoriecentre2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
 }

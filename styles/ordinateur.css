@@ -349,6 +349,7 @@ h2 {
     position: absolute;
     transform-origin: top;
     top: 130%;
+    width: 100%;
     background-color: #EAEAEA;
     border-radius: 10px;
     max-height: 400px;

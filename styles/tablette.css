@@ -120,7 +120,16 @@ header{
     grid-template-columns: 1fr;
 }
 
-.categoriecentre{
-    grid-template-columns: 1fr 1fr 1fr;
+
+.mobilnextandprev{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
 }
 
+.categoriecentre2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+}

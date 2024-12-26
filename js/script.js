@@ -1,3 +1,22 @@
+// gérer le responsif sur les pays
+
+if(screen.width <= 620){
+    document.querySelector('#totaleurope').setAttribute('width', '103');
+    document.querySelector('#totalafrique').setAttribute('width', '60');
+    document.querySelector('#totalasie').setAttribute('width', '103');
+    document.querySelector('#totalamériquenord').setAttribute('width', '101');
+    document.querySelector('#totalamériquesud').setAttribute('width', '48');
+    document.querySelector('#totalocéanie').setAttribute('width', '103');
+
+
+    let memoire = document.querySelector('.nextandprev').innerHTML
+    document.querySelector('.nextandprev').remove();
+    document.querySelector('.mobilnextandprev').innerHTML = memoire
+    let memoire2 = document.querySelector('.categoriecentre').innerHTML
+    document.querySelector('.categoriecentre').remove();
+    document.querySelector('.categoriecentre2').innerHTML = memoire2
+}
+
 document.querySelector('#stat_NCSI').addEventListener('mouseleave', leaveNCSI)
 document.querySelector('#stat_dev').addEventListener('mouseleave', leavedev)
 document.querySelector('#stat_ITC').addEventListener('mouseleave', leaveITC)
@@ -285,13 +304,3 @@ document.querySelector('#amesud2').innerHTML = '<b>' + moyenne_sud + ' %</b>'
 document.querySelector('#occeanie2').innerHTML = '<b>' + moyenne_occeanie + ' %</b>'
 
 
-// gérer le responsif sur les pays
-
-if(screen.width <= 620){
-    document.querySelector('#totaleurope').setAttribute('width', '103');
-    document.querySelector('#totalafrique').setAttribute('width', '60');
-    document.querySelector('#totalasie').setAttribute('width', '103');
-    document.querySelector('#totalamériquenord').setAttribute('width', '101');
-    document.querySelector('#totalamériquesud').setAttribute('width', '48');
-    document.querySelector('#totalocéanie').setAttribute('width', '103');
-}
