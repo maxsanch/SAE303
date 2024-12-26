@@ -1,0 +1,51 @@
+h2{
+    font-size: 22px;
+}
+
+.titre>h1{
+    font-size: 35px;
+}
+.boutons{
+    font-size: 16px;
+}
+
+.b1{
+    padding-inline: 20px;
+}
+.b2{
+    padding-inline: 20px;
+}
+
+.hautpage1{
+    min-height: 0vh;
+}
+
+.deroulant{
+    gap: 50px;
+}
+.parentcentre{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.pourcent{
+    font-size: 20px;
+}
+
+.next{
+    transform: scale(0.6);
+}
+.prev{
+    transform: scale(0.6);
+}
+.planete{
+    min-height: 30vh;
+}
+
+.categoriecentre{
+    grid-template-columns: 1fr 1fr;
+}
+
+#polar{
+    transform: scale(1.3);
+}
