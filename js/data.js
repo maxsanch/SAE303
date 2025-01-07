@@ -3259,16 +3259,16 @@ const pays = {
 
 
 const infos = {
-    "contribution global" : "<ul>Engagement dans les initiatives internationales de cybersécurité (partenariats avec l'UE ou l'ONU).</ul>",
-    "Education" : "<ul>Programmes éducatifs visant à sensibiliser et former à la cybersécurité à tous les niveaux (écoles, universités, entreprises).</ul>",
-    "Recherche et développement": "<ul>Investissements dans la recherche pour l'innovation en matière de cybersécurité, notamment pour les nouvelles menaces.</ul>",
-    "Infrastructures": "<ul>Mise en place d'infrastructures sécurisées, telles que des réseaux protégés et des systèmes de surveillance pour prévenir les cyberattaques. Facilité d'accès à internet. Facilité d'accès à des infrastructures numériques</ul>",
-    "Transactions en ligne": "<ul>Régulations et mécanismes de sécurité pour assurer la sécurité des transactions financières et des paiements en ligne. </ul>",
-    "Réactions au cyber attaques": "<ul>Stratégies de réponse rapide aux attaques de cybersécurité, y compris des équipes d'intervention spécialisées et des protocoles de communication. Réponses au cyber-attaques et facilité de récupération des données après une attaque.</ul>",
-    "Données personelles": "<ul>Régulations strictes sur la collecte, le stockage et la protection des données personnelles, en conformité avec le RGPD. Suppréssion des donénes après un certain temps sans leur utilisation. Serverus fiables et sécurisés.</ul>",
-    "Gestion des cyber-crises": "<ul>Planification de scénarios d'urgence pour répondre à des crises cybernétiques à grande échelle, avec des procédures claires de gestion de crise. Facilité à se relever d'un crise. Prévention et mesures de sécuritées contre tout incident.</ul>",
-    "gestion des cyber-crimes": "<ul>Mise en place de lois et d'outils pour prévenir et punir la cybercriminalité, y compris la coopération internationale.</ul>",
-    "Défences cyber militaires": "<ul>Développement de capacités de défense cybernétique pour protéger les infrastructures stratégiques et soutenir la sécurité nationale.</ul>",
-    "Réponse au incidents": "<ul>Protocole de réponse aux incidents de cybersécurité, avec une collaboration entre autorités publiques, entreprises et experts.</ul>",
-    "Politique": "<ul>Niveau d'adoption de la stratégie nationale, politiques spécifiques pour la protection des infrastructures critiques, cadre légal robuste incluant des lois contre la cybercriminalité.</ul>"
+    "contribution global" : "<li>Engagement dans les initiatives internationales de cybersécurité (partenariats avec l'UE ou l'ONU).</li>",
+    "Education" : "<li>Programmes éducatifs visant à sensibiliser.</li><li> Formations à la cybersécurité à tous les niveaux (écoles, universités, entreprises).</li>",
+    "Recherche et développement": "<li>Investissements dans la recherche pour l'innovation en matière de cybersécurité, notamment pour les nouvelles menaces.</li>",
+    "Infrastructures": "<li>Mise en place d'infrastructures sécurisées, telles que des réseaux protégés et des systèmes de surveillance pour prévenir les cyberattaques. </li><li>Facilité d'accès à internet. </li><li>Facilité d'accès à des infrastructures numériques</li>",
+    "Transactions en ligne": "<li>Régulations et mécanismes de sécurité pour assurer la sécurité des transactions financières et des paiements en ligne. </li>",
+    "Réactions au cyber attaques": "<li>Stratégies de réponse rapide aux attaques de cybersécurité, y compris des équipes d'intervention spécialisées et des protocoles de communication. </li><li> Réponses au cyber-attaques. </li><li> Facilité de récupération des données après une attaque.</li>",
+    "Données personelles": "<li>Régulations strictes sur la collecte, le stockage et la protection des données personnelles</li><li> Conformitée avec le RGPD. </li><li> Suppréssion des donénes après un certain temps sans leur utilisation. </li><li> Serveurs fiables et sécurisés.</li>",
+    "Gestion des cyber-crises": "<li>Planification de scénarios d'urgence pour répondre à des crises cybernétiques à grande échelle</li><li> Procédures claires de gestion de crise. </li><li> Facilité à se relever d'un crise. </li><li> Prévention et mesures de sécuritées contre tout incident.</li>",
+    "gestion des cyber-crimes": "<li>Mise en place de lois et d'outils pour prévenir et punir la cybercriminalité. </li><li> Coopération internationale pour limiter les crimes en lien avec la cyber securité.</li>",
+    "Défences cyber militaires": "<li>Développement de capacités de défense cybernétique pour protéger les infrastructures stratégiques. </li><li> Soutiens à la sécurité nationale.</li>",
+    "Réponse au incidents": "<li>Protocole de réponse aux incidents de cybersécurité.</li><li> Collaboration entre autorités publiques, entreprises et experts.</li>",
+    "Politique": "<li>Niveau d'adoption de la stratégie nationale.</li><li>Des politiques spécifiques pour la protection des infrastructures critiques.</li><li> Un cadre légal robuste incluant des lois contre la cybercriminalité.</li>"
 }

@@ -157,7 +157,6 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
             document.querySelector('#Line10').style = "transform: translateY(-345px);"
    
             Object.entries(pays).forEach(([key]) => {
-                console.log(document.querySelector("#" + key));
                 if (pays[key]['Continent'] == 'Europe') {
                     europeNCSI.push(pays[key]['NCSI'] - pays[key]['DigitalDéveloppement'])
                     if((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0){
@@ -251,4 +250,5 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
             document.querySelector('#occeanie2').innerHTML = '<b>' + moyenne_occeanie + ' %</b>'
         }
     }
-})
+});
+

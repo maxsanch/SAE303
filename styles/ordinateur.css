@@ -4,10 +4,13 @@ body {
     color: white;
     overflow-x: hidden;
     margin: 0;
+   
 }
 
 html {
     scroll-behavior: smooth;
+    scrollbar-color: #40034ab7 #02000F;
+    scrollbar-width: thin;
 }
 
 .hamburger {
@@ -337,7 +340,6 @@ h2 {
     border-radius: 10px;
     color: black;
     cursor: pointer;
-
     box-shadow: rgba(255, 255, 255, 0.486) 0 0 10px;
     transition: 0.4s;
     width: fit-content;
@@ -349,6 +351,8 @@ h2 {
     position: absolute;
     transform-origin: top;
     top: 130%;
+    scrollbar-color: rgb(175, 175, 175) transparent;
+    scrollbar-width: thin;
     width: 100%;
     background-color: #EAEAEA;
     border-radius: 10px;
@@ -356,6 +360,7 @@ h2 {
     overflow-y: scroll;
     color: black;
     font-family: bold;
+
     transform: scaleY(0);
     cursor: pointer;
     box-shadow: rgba(255, 255, 255, 0.486) 0 0 10px;
@@ -727,6 +732,9 @@ a:hover::before {
     transition-duration: ease-in-out;
 }
 
+.svgcontinent{
+    cursor: pointer;
+}
 
 .gridpourcents {
     display: grid;
@@ -796,3 +804,8 @@ a:hover::before {
     display: none;
 }
 
+
+
+.bold{
+    font-weight: bold;
+}

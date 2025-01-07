@@ -1,6 +1,6 @@
 // gérer le responsif sur les pays
 
-if(screen.width <= 620){
+if (screen.width <= 620) {
     document.querySelector('#totaleurope').setAttribute('width', '103');
     document.querySelector('#totalafrique').setAttribute('width', '60');
     document.querySelector('#totalasie').setAttribute('width', '103');
@@ -57,17 +57,17 @@ Object.entries(pays).forEach(([key]) => {
         occeanieNCSI.push(pays[key]['NCSI'])
     }
 
-    document.querySelector('#pays').innerHTML += "<p id='" + key + "'><b>" + key + "</b></p>"
+    document.querySelector('#pays').innerHTML += "<p id='" + key + "'><b>" + key.split('-').join(' ').split('_').join(' ') + "</b></p>"
 
     let splited = "";
 
-    if(key.split('_').length >= 2){
-        splited = '<tspan x='+x2+' dy="0">' + key.split('_')[0] + '</span><tspan x='+x2+' dy="25">' + key.split('_')[1] + '</tspan>';
-        if(key.split('_').length >= 3){
-            splited = '<tspan x='+x2+' dy="0">' + key.split('_')[0] + '</span><tspan x='+x2+' dy="25">' + key.split('_')[1] + ' '+ key.split('_')[2] + '</tspan>';
+    if (key.split('_').length >= 2) {
+        splited = '<tspan x=' + x2 + ' dy="0">' + key.split('_')[0] + '</span><tspan x=' + x2 + ' dy="25">' + key.split('_')[1] + '</tspan>';
+        if (key.split('_').length >= 3) {
+            splited = '<tspan x=' + x2 + ' dy="0">' + key.split('_')[0] + '</span><tspan x=' + x2 + ' dy="25">' + key.split('_')[1] + ' ' + key.split('_')[2] + '</tspan>';
         }
     }
-    else{
+    else {
         splited = key;
     }
 
@@ -185,7 +185,7 @@ function reculer() {
     mooved = mooved - 786;
 
     if (mooved < 0) {
-        mooved = (compter-6) * 131
+        mooved = (compter - 6) * 131
     }
     document.querySelector('#Group6').style = "transform: translateX(-" + mooved + "px);"
 }
@@ -236,7 +236,7 @@ function actualiser() {
     document.querySelector('#globalcontrib').innerHTML = pays[paysaffiche]['DigitalDéveloppement'] + " %";
     document.querySelector('#ITC').innerHTML = pays[paysaffiche]['DéveloppementTIC'] + " %";
     document.querySelector('#Préparationnewtech').innerHTML = pays[paysaffiche]['PréparationTIC'] + " %";
-    document.querySelector('#affichagebon').innerHTML = paysaffiche;
+    document.querySelector('#affichagebon').innerHTML = paysaffiche.split('_').join(' ').split('-').join(' ');
     document.querySelector('#stat_pays').innerHTML = "Statistiques : " + paysaffiche;
 
 
@@ -304,3 +304,18 @@ document.querySelector('#amesud2').innerHTML = '<b>' + moyenne_sud + ' %</b>'
 document.querySelector('#occeanie2').innerHTML = '<b>' + moyenne_occeanie + ' %</b>'
 
 
+for (let cle in infos) {
+    let domaine = document.createElement("p");
+    domaine.className = 'bold'
+    domaine.innerText = cle;
+    document.querySelector('#domainesder').appendChild(domaine);
+}
+
+document.querySelectorAll('#domainesder>p').forEach(element => {
+    element.addEventListener('click', changerinfos)
+
+    function changerinfos(){
+        document.querySelector('#choosendomaine').innerHTML = element.innerHTML
+        document.querySelector('.explains>ul').innerHTML = infos[element.innerText]
+    }
+});
