@@ -1,3 +1,5 @@
+// datas pour chaque pays
+
 const pays = {
     "Belgique": {
         "NCSI": 94.81,
@@ -3256,6 +3258,8 @@ const pays = {
         }
     },
 };
+
+// datas des informations pour chaques domaines
 
 
 const infos = {

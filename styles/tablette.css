@@ -1,4 +1,6 @@
 
+/* header sur tablette */
+
 header{
     background: #02000F;
     padding: 10px;
@@ -12,6 +14,7 @@ header{
     display: none;
 }
 
+/* apparition du menu hamburger et style de ce dernier */
 .hamburger{
     display: block;
     position: relative;
@@ -22,7 +25,7 @@ header{
     height: 4px;
     background: white;
 }
-
+/* liens header */
 .links{
     display: flex;
     flex-direction: column;
@@ -47,11 +50,13 @@ header{
     opacity: 1;
 }
 
+/* image de fon légèrement modifiée pour être plus adaptée */
 .imagebackground{
     width: 1200px;
     height: 1200px;
     right: -450px;
 }
+/* changement des grids des graphiques */
 
 .parent2{
     grid-template-columns: 1fr;
@@ -92,9 +97,13 @@ header{
     display: none;
 }
 
+/* grid du footer */
+
 .grid_footer{
     grid-template-columns: 1fr;
 }
+
+/* contacts du footer */
 
 .c{
     display: flex;
@@ -112,6 +121,8 @@ header{
     display: block;
 }
 
+/* menus déroulants */
+
 .deroulant{
     margin-top: 30px;
 }
@@ -120,6 +131,7 @@ header{
     grid-template-columns: 1fr;
 }
 
+/* styles des boutons suivant et précédent sur mobile et tablette */
 
 .mobilnextandprev{
     display: flex;

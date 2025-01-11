@@ -1,3 +1,5 @@
+/* changement de la tailel des polices sur téléphone */
+
 h2{
     font-size: 22px;
 }
@@ -9,12 +11,16 @@ h2{
     font-size: 16px;
 }
 
+/* rétrécissement des boutons */
+
 .b1{
     padding-inline: 20px;
 }
 .b2{
     padding-inline: 20px;
 }
+
+/* modification du haut de la page */
 
 .hautpage1{
     min-height: 0vh;
@@ -29,12 +35,15 @@ h2{
     font-size: 20px;
 }
 
+
+/* boutons suivant et précédent un peu plus petits */
 .next{
     transform: scale(0.6);
 }
 .prev{
     transform: scale(0.6);
 }
+/* taille de la terre */
 .planete{
     min-height: 30vh;
 }
@@ -42,10 +51,13 @@ h2{
 .grid_2{
     display: block;
 }
+/* graphiqeu polaire agrandi afin de ne pas paraitre miniature */
 
 #polar{
     transform: scale(1.1);
 }
+
+
 
 .categoriecentre2{
     display: grid;

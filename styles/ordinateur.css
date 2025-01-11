@@ -1,3 +1,6 @@
+
+/* styles de base du site  */
+
 body {
     background: #010101;
     font-family: monserrat;
@@ -11,10 +14,6 @@ html {
     scroll-behavior: smooth;
     scrollbar-color: #40034ab7 #02000F;
     scrollbar-width: thin;
-}
-
-.hamburger {
-    display: none;
 }
 
 @font-face {
@@ -50,6 +49,14 @@ header {
     top: 0;
 }
 
+/* hamburger sur ordinateur */
+
+.hamburger {
+    display: none;
+}
+
+/* apparition du header */
+
 @keyframes updown {
     from {
         transform: translateY(-100%);
@@ -70,12 +77,16 @@ header {
     gap: 60px;
 }
 
+/* haut de la page : liens du header */
+
 .menu {
     position: relative;
     cursor: pointer;
     z-index: 10000;
 }
 
+
+/* lien avec ouverture d'un trait en bas */
 .menu::before {
     content: "";
     position: absolute;
@@ -90,11 +101,13 @@ header {
 .links {
     display: none;
 }
-
+/* ouverture */
 .menu:hover::before {
     width: 100%;
 }
 
+
+/* haut de la page */
 .toppage {
     min-height: 90vh;
     display: flex;
@@ -127,6 +140,7 @@ header {
     animation-delay: 0.8s;
 }
 
+/* animation de la page */
 
 @keyframes entrance {
     from {
@@ -142,6 +156,8 @@ header {
     font-size: 45px;
 }
 
+/* parent top de la page */
+
 .parent2 {
     width: 85%;
     margin: auto;
@@ -156,6 +172,8 @@ header {
     margin-top: 30px;
     font-family: bold;
 }
+
+/* boutons */
 
 .b1 {
     padding: 5px;
@@ -188,6 +206,8 @@ header {
     transition: 0.4s;
     z-index: 2;
 }
+
+/* animation du second bouton */
 
 @keyframes grandir {
     from {
@@ -224,11 +244,15 @@ header {
     border: solid 1px #EAEAEA;
 }
 
+
+/* haut de la page */
 .hautpage1 {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
 }
+
+/* fond flou */
 
 .hautpage1::before {
     content: "";
@@ -246,6 +270,8 @@ header {
     filter: blur(20px);
 }
 
+/* image terre */
+
 .imagebackground {
     position: absolute;
     width: 1600px;
@@ -259,6 +285,8 @@ header {
 }
 
 
+/* apparition terre */
+
 @keyframes apparition {
     from {
         transform: translateX(100%);
@@ -268,6 +296,8 @@ header {
         transform: translateX(0);
     }
 }
+
+/* points et animations des points */
 
 .points {
     position: absolute;
@@ -289,6 +319,8 @@ header {
         transform: translateX(100%) rotate(360deg);
     }
 }
+
+/* faire tourner les points pour donner un effet inégal */
 
 #points>circle {
     animation: moove var(--temps) infinite alternate;
@@ -321,6 +353,7 @@ header {
 .parentcentre {
     margin-top: 100px;
 }
+/* titres */
 
 h2 {
     font-family: bold;
@@ -330,6 +363,8 @@ h2 {
     font-family: bold;
     font-size: 20px;
 }
+
+/* menu déroulant */
 
 .deroulant {
     z-index: 3000;
@@ -346,6 +381,8 @@ h2 {
     padding-inline: 20px;
     position: relative;
 }
+
+/* déroulé */
 
 .absoluteder {
     position: absolute;
@@ -372,6 +409,8 @@ h2 {
     color: black;
 }
 
+
+/* classe pour ouvrir */
 .ouvert {
     transform: scaleY(1);
 }
@@ -382,6 +421,8 @@ h2 {
     color: #010101;
     transition: 0.4s;
 }
+
+/* hover pour de l'animation */
 
 .absoluteder>p:hover {
     background: #c0c0c0;
@@ -395,6 +436,8 @@ h2 {
     display: flex;
     flex-direction: column;
 }
+
+/* explication des catégories */
 
 .explains {
     position: relative;
@@ -421,6 +464,8 @@ h2 {
     background: white;
 }
 
+/* animation du trait sur le coté */
+
 @keyframes spawndown {
     from {
         height: 0;
@@ -431,25 +476,18 @@ h2 {
     }
 }
 
-
 .imagefond {
     z-index: 0;
 }
 
-
-.flag {
-    width: 50px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
+/* titre par domaines */
 .titre_categorie {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* explication du deuxième graphique */
 
 .explications2 {
     display: flex;
@@ -457,10 +495,13 @@ h2 {
     justify-content: center;
 }
 
+
+/* explication du 3ème */
 #petit {
     width: 700px;
 }
 
+/* grid du footer */
 
 .grid_footer {
     display: grid;
@@ -470,6 +511,8 @@ h2 {
     margin: auto;
     z-index: 20;
 }
+
+/* différentes zones du footer */
 
 .zone1 {
     display: flex;
@@ -503,6 +546,8 @@ h2 {
     background: black;
 }
 
+
+/* contacts */
 .suivez {
     display: flex;
     justify-content: space-between;
@@ -510,10 +555,14 @@ h2 {
 
 }
 
+/* liens rapides */
+
 .liens {
     display: flex;
     gap: 50px;
 }
+
+/* trait sous les liens */
 
 a {
     color: white;
@@ -530,6 +579,8 @@ a {
     bottom: -2px;
     transition: 0.4s;
 }
+
+/* paragraphes du footer */
 
 footer p {
     padding-top: 10px;
@@ -567,39 +618,14 @@ a:hover::before {
     margin-top: 40px;
 }
 
-.planete {
-    min-height: 70vh;
-    position: relative;
-}
-
-.terre {
-    background-image: radial-gradient(rgba(5, 6, 35, 0.7), transparent 70%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -2;
-}
-
-.graph {
-    position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.pourcent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 50px;
-}
+/* terre en fond */
 
 .pourcentage_page {
     position: relative;
     min-height: 100vh;
 }
+
+/* fond flou */
 
 .pourcentage_page::before {
     content: "";
@@ -617,42 +643,7 @@ a:hover::before {
     filter: blur(20px);
 }
 
-.prev {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 30px;
-    position: relative;
-    border-radius: 100%;
-    border: white solid 1px;
-}
-
-.next {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 30px;
-    border-radius: 100%;
-    position: relative;
-    border: white solid 1px;
-}
-
-.f {
-    font-size: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-}
-
-.flexfleche {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    justify-content: space-between;
-    margin: auto;
-    width: 80%;
-    margin-bottom: 40px;
-}
-
+/* explications */
 .explain>p {
     margin: 0;
 }
@@ -665,6 +656,7 @@ a:hover::before {
     padding-left: 15px;
 }
 
+/* continents */
 .cont {
     display: flex;
     align-items: center;
@@ -687,13 +679,14 @@ a:hover::before {
 
 /* bas de la page */
 
-
-
+/* catégories domaines */
 .categoriecentre {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: end;
 }
+
+/* couleurs des domaiens et style de chaque case */
 
 .domainesingle {
     display: flex;
@@ -709,7 +702,7 @@ a:hover::before {
     opacity: 0.7;
 }
 
-
+/* barres qui grandissent au hover */
 .svgpourcent {
     border-left: white solid 1px;
     border-right: white solid 1px;
@@ -721,11 +714,14 @@ a:hover::before {
     height: 100%;
 }
 
+/* tailel pourcentage */
+
 .heightpourcentage {
     display: flex;
     flex-direction: column; /* Pour bien gérer le texte et SVG */
-
 }
+
+/* transotion quadn el trait s'agrandit */
 
 .transitiontrait {
     transition: 1.2s;
@@ -735,6 +731,8 @@ a:hover::before {
 .svgcontinent{
     cursor: pointer;
 }
+
+/* grid des barres */
 
 .gridpourcents {
     display: grid;
@@ -746,6 +744,8 @@ a:hover::before {
     margin-bottom: 40px;
 }
 
+
+/* styles des rectangles du graphique a barres */
 #Group6>rect {
     transform-origin: 50% 50%;
     transform: rotateX(180deg);
@@ -766,6 +766,8 @@ a:hover::before {
     width: 111px;
 }
 
+/* boutons suivant et précédent */
+
 .nextandprev{
     display: flex;
     align-items: center;
@@ -782,6 +784,9 @@ a:hover::before {
     text-align: center;
     cursor: pointer;
 }
+
+
+/* graphique polaire */
 
 #polar>path{
     transform-origin: center;
@@ -803,8 +808,6 @@ a:hover::before {
 .diff{
     display: none;
 }
-
-
 
 .bold{
     font-weight: bold;
