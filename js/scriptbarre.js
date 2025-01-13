@@ -209,11 +209,11 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
    
             Object.entries(pays).forEach(([key]) => {
 
-                // changement taille de chaque barres 
+                // changement taille de chaque barres
 
                 if (pays[key]['Continent'] == 'Europe') {
 
-                    // pour chaque barre on calcule la différence, donc la sécurité moins le DigitalDéveloppement 
+                    // pour chaque barres on calcule la différence, donc la sécurité moins le DigitalDéveloppement 
                     europeNCSI.push(pays[key]['NCSI'] - pays[key]['DigitalDéveloppement'])
                     if((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0){
                         document.querySelector("#" + key).setAttribute("height", ((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100)
@@ -312,30 +312,49 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
     }
 });
 
+
 // faire en sorte que l'on puisse avoir un hover sur les statistiques
 
 // créer une div qui va accueillir la donnée
 
 document.querySelectorAll('#Group6>rect').forEach(e => {
 
-
     // vérifier quel est la catégorie séléctionnée
-
 
     e.addEventListener('mouseover', afficherdiv)
 
     function afficherdiv(){
-        lock = pays[e.id]['NCSI']
-        const test = e.getBoundingClientRect();
-        console.log(test.top);
-        
-        document.querySelector('.informationsbarres').innerHTML = '<div class="infobarre">'+lock+'</div>';
-        document.querySelector('.informationsbarres').style = "top: "++"px; left: 450px;";
+        let recupchoose = document.querySelector('#indexder').innerText
+        if(recupchoose == 'Sécurité'){
+            lock = pays[e.id]['NCSI']
+            const test = e.getBoundingClientRect();
+            console.log(test.top);
+            document.querySelector('.informationsbarres').innerHTML = '<div class="infobarre"><b>'+lock+' %</b></div>';
+            document.querySelector('.informationsbarres').classList.add('apparaitre')
+            document.querySelector('.informationsbarres').style = "top: "+test.top+"px; left: "+test.left+"px;";
+        }
+        if(recupchoose == 'Développement'){
+            lock = pays[e.id]['DigitalDéveloppement']
+            const test = e.getBoundingClientRect();
+            console.log(test.top);
+            document.querySelector('.informationsbarres').innerHTML = '<div class="infobarre"><b>'+lock+' %</b></div>';
+            document.querySelector('.informationsbarres').classList.add('apparaitre')
+            document.querySelector('.informationsbarres').style = "top: "+test.top+"px; left: "+test.left+"px;";
+        }
+        if(recupchoose == 'Différence'){
+            console.log(pays[e.id]['NCSI'] +' '+ pays[e.id]['DigitalDéveloppement']+' '+ (pays[e.id]['NCSI'] - pays[e.id]['DigitalDéveloppement']))
+            lock = (pays[e.id]['NCSI'] - pays[e.id]['DigitalDéveloppement'])
+            const test = e.getBoundingClientRect();
+            document.querySelector('.informationsbarres').innerHTML = '<div class="infobarre"><b>'+lock+' %</b></div>';
+            document.querySelector('.informationsbarres').classList.add('apparaitre')
+            document.querySelector('.informationsbarres').style = "top: "+test.top+"px; left: "+test.left+"px;";
+        }
     }
 
-    let div = document.createElement("div");
-    div.className = "infobarre";
-    div.innerText = "Coucou, je suis un chameau !";
-    document.body.appendChild(div); 
+    e.addEventListener('mouseleave', fermer)
+
+    function fermer(){
+        document.querySelector('.informationsbarres').classList.remove('apparaitre')
+    }
 })
 

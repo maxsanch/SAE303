@@ -817,4 +817,39 @@ a:hover::before {
 
 .informationsbarres{
     position: fixed;
+    width: 95.58px;
+    transform: translateY(-70px);
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    background: white;
+    color: #010101;
+    animation: 0.4s opacité forwards;
+}
+
+/* animation d'apparition */
+
+@keyframes opacité{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        display: none;
+    }
+}
+
+.apparaitre{
+    display: block;
+    animation: forwards 0.4s opacité2;
+}
+
+@keyframes opacité2{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }

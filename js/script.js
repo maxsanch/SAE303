@@ -256,10 +256,11 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                             document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
-
                         else{
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + 0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector("#" + key).setAttribute("height", (0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
                             document.querySelector("#" + key).setAttribute("y", 383.5-(0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
+                            document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                         }
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
@@ -274,8 +275,10 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
                         else{
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + 0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector("#" + key).setAttribute("height", (0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
                             document.querySelector("#" + key).setAttribute("y", 383.5-(0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
+                            document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                         }
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
@@ -290,8 +293,10 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
                         else{
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + 0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector("#" + key).setAttribute("height", (0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
                             document.querySelector("#" + key).setAttribute("y", 383.5-(0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
+                            document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                         }
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
@@ -306,8 +311,10 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
                         else{
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + 0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector("#" + key).setAttribute("height", (0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
                             document.querySelector("#" + key).setAttribute("y", 383.5-(0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
+                            document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                         }
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
@@ -317,13 +324,14 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 if (e.querySelector('g').id == 'ameriquesud') {
                     if (pays[key]['Continent'] == 'Amérique du sud') {
                         if((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0){
-                            
                             document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
                         else{
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + 0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector("#" + key).setAttribute("height", (0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
                             document.querySelector("#" + key).setAttribute("y", 383.5-(0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
+                            document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                         }
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
@@ -333,12 +341,15 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 if (e.querySelector('g').id == 'océanie') {
                     if (pays[key]['Continent'] == 'Océanie') {
                         if((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0){
+                            console.log('test')
                             document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
                         else{
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + 0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector("#" + key).setAttribute("height", (0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
                             document.querySelector("#" + key).setAttribute("y", 383.5-(0-((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100))
+                            document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                         }
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
