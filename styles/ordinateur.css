@@ -267,17 +267,16 @@ header {
     background-repeat: no-repeat;
     background-size: 100%, 100%;
     background-position: center, center;
-    filter: blur(20px);
+    filter: blur(150px);
 }
 
 /* image terre */
 
 .imagebackground {
     position: absolute;
-    width: 1600px;
-    height: 1600px;
+    width: 1300px;
+    right: -250px;
     top: -120px;
-    right: -350px;
     z-index: -1;
     transform: translateX(100%);
     animation: apparition 1s forwards cubic-bezier(.36, .28, .47, 1.01);
@@ -811,4 +810,11 @@ a:hover::before {
 
 .bold{
     font-weight: bold;
+}
+
+
+/* style de la pop up du hover */
+
+.informationsbarres{
+    position: fixed;
 }

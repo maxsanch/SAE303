@@ -312,3 +312,30 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
     }
 });
 
+// faire en sorte que l'on puisse avoir un hover sur les statistiques
+
+// créer une div qui va accueillir la donnée
+
+document.querySelectorAll('#Group6>rect').forEach(e => {
+
+
+    // vérifier quel est la catégorie séléctionnée
+
+
+    e.addEventListener('mouseover', afficherdiv)
+
+    function afficherdiv(){
+        lock = pays[e.id]['NCSI']
+        const test = e.getBoundingClientRect();
+        console.log(test.top);
+        
+        document.querySelector('.informationsbarres').innerHTML = '<div class="infobarre">'+lock+'</div>';
+        document.querySelector('.informationsbarres').style = "top: "++"px; left: 450px;";
+    }
+
+    let div = document.createElement("div");
+    div.className = "infobarre";
+    div.innerText = "Coucou, je suis un chameau !";
+    document.body.appendChild(div); 
+})
+
