@@ -85,10 +85,8 @@ Object.entries(pays).forEach(([key]) => {
         splited = key;
     }
 
-
-
     // on inclut ensuite le tout dans le group6 du svg (le nom est l'original de figma) afin d'avoir tout le graphique qui s'affiche
-    document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
+    document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
     // on ajout la taille de chaque barres a chaque itération et on a le tout
     x = x + 111 + 20;
     x2 = x2 + 111 + 20;
@@ -150,7 +148,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent 
                 if (e.querySelector('g').id == 'europe') {
                     if (pays[key]['Continent'] == 'Europe') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -158,7 +156,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'afrique') {
                     if (pays[key]['Continent'] == 'Afrique') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -166,7 +164,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'asie') {
                     if (pays[key]['Continent'] == 'Asie') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -174,7 +172,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'amériquenord') {
                     if (pays[key]['Continent'] == 'Amérique du nord') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -182,7 +180,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'ameriquesud') {
                     if (pays[key]['Continent'] == 'Amérique du sud') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -190,7 +188,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'océanie') {
                     if (pays[key]['Continent'] == 'Océanie') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['NCSI'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -201,7 +199,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent 
                 if (e.querySelector('g').id == 'europe') {
                     if (pays[key]['Continent'] == 'Europe') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -209,7 +207,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'afrique') {
                     if (pays[key]['Continent'] == 'Afrique') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -217,7 +215,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'asie') {
                     if (pays[key]['Continent'] == 'Asie') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -225,7 +223,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'amériquenord') {
                     if (pays[key]['Continent'] == 'Amérique du nord') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -233,7 +231,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'ameriquesud') {
                     if (pays[key]['Continent'] == 'Amérique du sud') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -241,7 +239,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                 }
                 if (e.querySelector('g').id == 'océanie') {
                     if (pays[key]['Continent'] == 'Océanie') {
-                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                        document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (pays[key]['DigitalDéveloppement'] * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white" /><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                         x = x + 111 + 20;
                         x2 = x2 + 111 + 20;
                         compter = compter + 1
@@ -254,7 +252,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
                     if (pays[key]['Continent'] == 'Europe') {
                         if ((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0) {
 
-                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text>'
+                            document.querySelector('#Group6').innerHTML += '<rect id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + key + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((pays[key]['NCSI'] * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="'+key+'texthover" x="' + x2 + '" y="'+ ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5) +'" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + pays[key]['NCSI'] +'%</text>'
                             document.querySelector("#" + key).setAttribute("y", "383.5")
                         }
                         else {

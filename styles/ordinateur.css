@@ -861,6 +861,11 @@ a:hover::before {
     opacity: 0;
 }
 
+
+.rectinfo2{
+    opacity: 0;
+}
+
 .ouverturehover{
     opacity: 1;
 }

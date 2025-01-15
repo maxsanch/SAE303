@@ -66,8 +66,6 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
             
             });
 
-            document.querySelector('.'+key+'hover').setAttribute('y', (pays[key]['NCSI'] * 690) / 100);
-
             // changer les moyennnes pour être conforme au choix fait
 
             let moyenne_europe = Math.round((europeNCSI.reduce(moyenne) / europeNCSI.length) * 100) / 100
@@ -300,12 +298,12 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
 
                 if((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0){
                     document.querySelector('#'+key+'hover').setAttribute('y', (345 +(((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100)+ 55))
-                    document.querySelector('#'+key+'texthover').setAttribute('y', ((((786 - (((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100) + 55)) - 23.5) - 345))
+                    document.querySelector('#'+key+'texthover').setAttribute('y', (401 - (((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100)) - 37.5 )
                     document.querySelector('#'+key+'texthover').innerHTML = pays[key]['DigitalDéveloppement'] + " %"
                 }
                 else{
                     document.querySelector('#'+key+'hover').setAttribute('y', (345 + 55))
-                    document.querySelector('#'+key+'texthover').setAttribute('y', (345 - 23.5))
+                    document.querySelector('#'+key+'texthover').setAttribute('y', 345 + 18.5)
                     document.querySelector('#'+key+'texthover').innerHTML = pays[key]['DigitalDéveloppement'] + " %"
                 }
             });
@@ -350,12 +348,14 @@ document.querySelectorAll('.barbapapa').forEach(e => {
 
     function afficherdiv(){
         document.querySelector('#'+e.id+'hover').classList.add('ouverturehover')
+        document.querySelector('#'+e.id+'texthover').classList.add('ouverturehover')
     }
 
     e.addEventListener('mouseleave', fermer)
 
     function fermer(){
         document.querySelector('#'+e.id+'hover').classList.remove('ouverturehover')
+        document.querySelector('#'+e.id+'texthover').classList.remove('ouverturehover')
     }
 })
 
