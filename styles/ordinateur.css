@@ -162,7 +162,7 @@ header {
     width: 85%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1.6fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .boutons {
