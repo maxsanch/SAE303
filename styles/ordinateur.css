@@ -853,3 +853,14 @@ a:hover::before {
         opacity: 1;
     }
 }
+
+/* pour le svg */
+
+.rectinfo{
+    transform: rotateX(180deg) translateX(-55.5px) !important;
+    opacity: 0;
+}
+
+.ouverturehover{
+    opacity: 1;
+}

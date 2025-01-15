@@ -59,7 +59,14 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
                     occeanieNCSI.push(pays[key]['NCSI'])
                     document.querySelector("#" + key).setAttribute("height", (pays[key]['NCSI'] * 690) / 100)
                 }
+
+                document.querySelector('#'+key+'hover').setAttribute('y', (((pays[key]['NCSI'] * 690) / 100)+ 55))
+                document.querySelector('#'+key+'texthover').setAttribute('y', ((786 - (((pays[key]['NCSI'] * 690) / 100) + 55)) - 23.5))
+                document.querySelector('#'+key+'texthover').innerHTML = pays[key]['NCSI'] + " %"
+            
             });
+
+            document.querySelector('.'+key+'hover').setAttribute('y', (pays[key]['NCSI'] * 690) / 100);
 
             // changer les moyennnes pour être conforme au choix fait
 
@@ -145,8 +152,12 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
                     occeanieNCSI.push(pays[key]['DigitalDéveloppement'])
                     document.querySelector("#" + key).setAttribute("height", (pays[key]['DigitalDéveloppement'] * 690) / 100)
                 }
+
+                document.querySelector('#'+key+'hover').setAttribute('y', (((pays[key]['DigitalDéveloppement'] * 690) / 100)+ 55))
+                document.querySelector('#'+key+'texthover').setAttribute('y', ((786 - (((pays[key]['DigitalDéveloppement'] * 690) / 100) + 55)) - 23.5))
+                document.querySelector('#'+key+'texthover').innerHTML = pays[key]['DigitalDéveloppement'] + " %"
             });
-            
+
             // calule des moyennes
 
             let moyenne_europe = Math.round((europeNCSI.reduce(moyenne) / europeNCSI.length) * 100) / 100
@@ -285,6 +296,18 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
                         document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
                     }
                 }
+
+
+                if((((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 690) / 100) >= 0){
+                    document.querySelector('#'+key+'hover').setAttribute('y', (345 +(((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100)+ 55))
+                    document.querySelector('#'+key+'texthover').setAttribute('y', ((((786 - (((pays[key]['NCSI'] - pays[key]['DigitalDéveloppement']) * 345) / 100) + 55)) - 23.5) - 345))
+                    document.querySelector('#'+key+'texthover').innerHTML = pays[key]['DigitalDéveloppement'] + " %"
+                }
+                else{
+                    document.querySelector('#'+key+'hover').setAttribute('y', (345 + 55))
+                    document.querySelector('#'+key+'texthover').setAttribute('y', (345 - 23.5))
+                    document.querySelector('#'+key+'texthover').innerHTML = pays[key]['DigitalDéveloppement'] + " %"
+                }
             });
 
 
@@ -317,50 +340,22 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
 
 // créer une div qui va accueillir la donnée
 
-document.querySelectorAll('#Group6>rect').forEach(e => {
+document.querySelectorAll('.barbapapa').forEach(e => {
 
     // vérifier quelle est la catégorie séléctionnée
 
     // sécurité, Développement et différence sont présents simplement pour comprendre quelle statistique le graphique doit afficher, le Hover s'adapte alors en conséquence.
 
     e.addEventListener('mouseover', afficherdiv)
-    let interval = "";
 
     function afficherdiv(){
-        interval = setInterval(actualiser, 16);
-
-        function actualiser(){
-            let recupchoose = document.querySelector('#indexder').innerText
-            if(recupchoose == 'Sécurité'){
-                lock = pays[e.id]['NCSI']
-            }
-            if(recupchoose == 'Développement'){
-                lock = pays[e.id]['DigitalDéveloppement']
-            }
-            if(recupchoose == 'Différence'){
-                calcul = pays[e.id]['NCSI'] - pays[e.id]['DigitalDéveloppement']
-                lock = Math.floor(calcul*100)/100
-
-            }
-    
-            const test = e.getBoundingClientRect();
-            document.querySelector('.informationsbarres').innerHTML = '<div class="infobarre"><b>'+lock+' %</b></div>';
-            document.querySelector('.informationsbarres').classList.add('apparaitre')
-            document.querySelector('.informationsbarres').style = "top: "+test.top+"px; left: "+test.left+"px;";
-    
-            if(recupchoose == 'Différence'){
-                document.querySelector('.informationsbarres').classList.add('apparaitre')
-                document.querySelector('.informationsbarres').style = "top: "+test.top+"px; left: "+test.left+"px;";
-            }
-
-        }
+        document.querySelector('#'+e.id+'hover').classList.add('ouverturehover')
     }
 
     e.addEventListener('mouseleave', fermer)
 
     function fermer(){
-        clearInterval(interval)
-        document.querySelector('.informationsbarres').classList.remove('apparaitre')
+        document.querySelector('#'+e.id+'hover').classList.remove('ouverturehover')
     }
 })
 
