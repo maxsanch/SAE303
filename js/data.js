@@ -3152,7 +3152,7 @@ const pays = {
             "Militaire": 0
         }
     },
-    "Saint-Vincent_et-les-Grenadines": {
+    "Saint_Vincent": {
         "NCSI": 7.79,
         "DigitalDéveloppement": 55.40,
         "DéveloppementTIC": 55,
