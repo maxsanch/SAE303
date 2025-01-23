@@ -334,29 +334,6 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
 });
 
 
-// faire en sorte que l'on puisse avoir un hover sur les statistiques
 
-// créer une div qui va accueillir la donnée
-
-document.querySelectorAll('.barbapapa').forEach(e => {
-
-    // vérifier quelle est la catégorie séléctionnée
-
-    // sécurité, Développement et différence sont présents simplement pour comprendre quelle statistique le graphique doit afficher, le Hover s'adapte alors en conséquence.
-
-    e.addEventListener('mouseover', afficherdiv)
-
-    function afficherdiv(){
-        document.querySelector('#'+e.id+'hover').classList.add('ouverturehover')
-        document.querySelector('#'+e.id+'texthover').classList.add('ouverturehover')
-    }
-
-    e.addEventListener('mouseleave', fermer)
-
-    function fermer(){
-        document.querySelector('#'+e.id+'hover').classList.remove('ouverturehover')
-        document.querySelector('#'+e.id+'texthover').classList.remove('ouverturehover')
-    }
-})
 
 
