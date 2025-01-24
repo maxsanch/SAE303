@@ -274,7 +274,7 @@ header {
 
 .imagebackground {
     position: absolute;
-    width: 1300px;
+    width: 1500px;
     right: -250px;
     top: -120px;
     z-index: -1;
