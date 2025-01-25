@@ -25,13 +25,6 @@ function actualisation() {
     })
 }
 
-// quand la souris s'enlève de par dessus le graphique ou le pourcentage monte, ca enlève la barre violette.
-
-document.querySelector('#stat_NCSI').addEventListener('mouseleave', leaveNCSI)
-document.querySelector('#stat_dev').addEventListener('mouseleave', leavedev)
-document.querySelector('#stat_ITC').addEventListener('mouseleave', leaveITC)
-document.querySelector('#stat_prep').addEventListener('mouseleave', leaveprepITC)
-
 // x par défaut pour le début de la ImageBitmapRenderingContext, x2 par défaut pour le début du texte
 
 let x = 53.5;
@@ -99,28 +92,6 @@ function reculer() {
 }
 
 
-// quand on part du hover sur les barres de chargement en bas : stats globales par pays
-function leaveNCSI() {
-    document.querySelectorAll('#violet2_NCSI').forEach(e => {
-        e.style = "stroke-dasharray: 0 100;";
-    });
-}
-function leavedev() {
-    document.querySelectorAll('#développement_digital').forEach(e => {
-        e.style = "stroke-dasharray: 0 100;";
-    });
-}
-function leaveITC() {
-    document.querySelectorAll('#ITCsvg').forEach(e => {
-        e.style = "stroke-dasharray: 0 100;";
-    });
-}
-function leaveprepITC() {
-    document.querySelectorAll('#préparationTIC').forEach(e => {
-        e.style = "stroke-dasharray: 0 100;";
-    });
-}
-
 // pays par défaut
 
 let paysaffiche = 'France';
@@ -138,13 +109,6 @@ document.querySelectorAll('#pays>p').forEach(element => {
 
 function actualiser() {
 
-    // lors du hover avec la barre de chargement, faire grandir la barre
-
-    document.querySelector('#stat_NCSI').addEventListener('mouseover', alignementNCSI)
-    document.querySelector('#stat_dev').addEventListener('mouseover', alignementdev)
-    document.querySelector('#stat_ITC').addEventListener('mouseover', alignementITC)
-    document.querySelector('#stat_prep').addEventListener('mouseover', alignementprepITC)
-
     // affichage en fonction des pays, stats globales pour chacun d'eux
 
     document.querySelector('#NCSIpourcent').innerHTML = pays[paysaffiche]['NCSI'] + " %";
@@ -157,42 +121,32 @@ function actualiser() {
 
     // affichage pour chaques domaines en fonction du pays choisi
 
-    document.querySelector('#globalcontribution').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['ContributionGlobale'] / 100 + ';';
-    document.querySelector('#Education').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['Education'] / 100 + ';';
-    document.querySelector('#recherche_développement').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['RechercheDéveloppement'] / 100 + ';';
-    document.querySelector('#infrastructures').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['Infrastructures'] / 100 + ';';
-    document.querySelector('#Transactions').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['Utilisateurs'] / 100 + ';';
-    document.querySelector('#cyber-attaques').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['RéponseMenaces'] / 100 + ';';
-    document.querySelector('#perso_data').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['ProtectionDonnées'] / 100 + ';';
-    document.querySelector('#cyber-crises').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['GestionCrise'] / 100 + ';';
-    document.querySelector('#cybercrimes').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['PoliceCybercriminelle'] / 100 + ';';
-    document.querySelector('#militaire').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['Militaire'] / 100 + ';';
-    document.querySelector('#incidents').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['RéponseIncidents'] / 100 + ';';
-    document.querySelector('#Politique').style = "--taille : " + pays[paysaffiche]['AccomplissementsParDomaines']['Politique'] / 100 + ';';
+    Object.entries(pays[paysaffiche]['AccomplissementsParDomaines']).forEach(([cléPays, dataPays]) => {
+        console.log(cléPays)
+        document.querySelector('#'+cléPays).style = "--taille : " + dataPays / 100 + ';';
+    })
 
+    // lors du hover avec la barre de chargement, faire grandir la barre
 
-    // augmentation de la taille du trait de chargement lors du passage de la souris
+    document.querySelectorAll('.heightpourcentage').forEach(e => {
+        e.addEventListener('mouseover', grandir)
 
-    function alignementNCSI() {
-        document.querySelectorAll('#violet2_NCSI').forEach(e => {
-            e.style = "stroke-dasharray: " + Math.round(pays[paysaffiche]['NCSI'] * 100) / 100 + " " + Math.round((100 - pays[paysaffiche]['NCSI']) * 100) / 100 + ";";
-        });
-    }
-    function alignementdev() {
-        document.querySelectorAll('#développement_digital').forEach(e => {
-            e.style = "stroke-dasharray: " + Math.round(pays[paysaffiche]['DigitalDéveloppement'] * 100) / 100 + " " + Math.round((100 - pays[paysaffiche]['DigitalDéveloppement']) * 100) / 100 + ";";
-        });
-    }
-    function alignementITC() {
-        document.querySelectorAll('#ITCsvg').forEach(e => {
-            e.style = "stroke-dasharray: " + Math.round(pays[paysaffiche]['DéveloppementTIC'] * 100) / 100 + " " + Math.round((100 - pays[paysaffiche]['DéveloppementTIC']) * 100) / 100 + ";";
-        });
-    }
-    function alignementprepITC() {
-        document.querySelectorAll('#préparationTIC').forEach(e => {
-            e.style = "stroke-dasharray: " + Math.round(pays[paysaffiche]['PréparationTIC'] * 100) / 100 + " " + Math.round((100 - pays[paysaffiche]['PréparationTIC']) * 100) / 100 + ";";
-        });
-    }
+        function grandir() {
+            splitid = e.id.split('_')[1]
+            document.querySelectorAll('#violet2_' + splitid + '').forEach(e => {
+                e.style = "stroke-dasharray: " + Math.round(pays[paysaffiche][splitid] * 100) / 100 + " " + Math.round((100 - pays[paysaffiche][splitid]) * 100) / 100 + ";";
+            });
+        }
+
+        e.addEventListener('mouseleave', enlever)
+
+        function enlever() {
+            splitid = e.id.split('_')[1]
+            document.querySelectorAll('#violet2_' + splitid + '').forEach(e => {
+                e.style = "stroke-dasharray: 0 100;";
+            });
+        }
+    })
 }
 
 // fonction par défaut en France.
@@ -200,9 +154,7 @@ function actualiser() {
 actualiser();
 
 document.querySelectorAll('.deroulant').forEach(e => {
-
     // ouverture du menu déroulant
-
     e.addEventListener('click', openned)
 
     function openned() {
