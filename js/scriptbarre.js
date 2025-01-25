@@ -2,6 +2,8 @@
 
 let test = 'tout'
 
+
+
 /************************************** */
 /************************************** */
 // initialisation des moyennes quand rien n'est séléctionné, je dois alors faire en sorte qu'une moyenen s'affiche par défaut.
@@ -128,6 +130,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
         let recupchoose = document.querySelector('#indexder').innerText
         test = transcrire2[e.querySelector('g').id]
 
+
         /*****************/
         /*****************/
         /*****************/
@@ -149,7 +152,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
 
             if (recupchoose == 'Sécurité') {
                 // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent
-                if (test == valeur.Continent || test == 'tout') {
+                if (test == valeur.Continent) {
                     document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (valeur.NCSI * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((valeur.NCSI * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="' + ((786 - (((valeur.NCSI * 690) / 100) + 55)) - 23.5) + '" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + valeur.NCSI + '%</text>'
                     x = x + 111 + 20;
                     x2 = x2 + 111 + 20;
@@ -158,7 +161,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
             }
             if (recupchoose == 'Développement') {
                 // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent
-                if (test == valeur.Continent || test == 'tout') {
+                if (test == valeur.Continent) {
                     document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (valeur.DigitalDéveloppement * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((valeur.DigitalDéveloppement * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="' + ((786 - (((valeur.DigitalDéveloppement * 690) / 100) + 55)) - 23.5) + '" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + valeur.DigitalDéveloppement + '%</text>'
                     x = x + 111 + 20;
                     x2 = x2 + 111 + 20;
@@ -167,7 +170,7 @@ document.querySelectorAll('.continentsingle').forEach(e => {
             }
             if (recupchoose == 'Différence') {
                 // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent
-                if (test == valeur.Continent || test == 'tout') {
+                if (test == valeur.Continent) {
                     if ((((valeur.NCSI - valeur.DigitalDéveloppement) * 690) / 100) >= 0) {
                         document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (403 + (((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100)) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="' + (396 - (((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100) - 35) + '" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + (valeur.NCSI - valeur.DigitalDéveloppement).toFixed(2) + '%</text>'
                         document.querySelector("#" + key).setAttribute("y", "383.5")
@@ -362,3 +365,73 @@ document.querySelectorAll('#deroulant_sécu>p').forEach(e => {
         }
     }
 });
+
+/************************/
+/*********RESET**********/
+/************************/
+
+document.querySelector('#reset').addEventListener('click', resetgraph)
+
+function resetgraph() {
+
+    /*************/
+    /****PRE OPERATIONS****/
+    /*************/
+    // on vide tout le groupe 6 et on reinitialise les comptes 
+    document.querySelector('#Group6').innerHTML = '';
+    x = 53.5
+    x2 = 109;
+    compter = 0;
+
+    // on remet tout au début
+    document.querySelector('#Group6').style = "transform: translateX(0);"
+    let recupchoose = document.querySelector('#indexder').innerText
+
+    Object.entries(pays).forEach(([key, valeur]) => {
+        // ici on définis splited en vide qui va accueillir le nom des pays de manière splitée si ils ont des tirets du 8
+        let splited = "";
+        if (key.split('_').length >= 2) {
+            splited = '<tspan x=' + x2 + ' dy="0">' + key.split('_')[0] + '</span><tspan x=' + x2 + ' dy="25">' + key.split('_')[1] + '</tspan>';
+            if (key.split('_').length >= 3) {
+                splited = '<tspan x=' + x2 + ' dy="0">' + key.split('_')[0] + '</span><tspan x=' + x2 + ' dy="25">' + key.split('_')[1] + ' ' + key.split('_')[2] + '</tspan>';
+            }
+        }
+        else {
+            splited = key;
+        }
+
+        // vérifier ce qu'on veux
+
+        if (recupchoose == 'Sécurité') {
+            // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent
+            document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (valeur.NCSI * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((valeur.NCSI * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="' + ((786 - (((valeur.NCSI * 690) / 100) + 55)) - 23.5) + '" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + valeur.NCSI + '%</text>'
+            x = x + 111 + 20;
+            x2 = x2 + 111 + 20;
+            compter = compter + 1
+        }
+        if (recupchoose == 'Développement') {
+            // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent
+            document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + (valeur.DigitalDéveloppement * 690) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect> <text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (((valeur.DigitalDéveloppement * 690) / 100) + 55) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="' + ((786 - (((valeur.DigitalDéveloppement * 690) / 100) + 55)) - 23.5) + '" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + valeur.DigitalDéveloppement + '%</text>'
+            x = x + 111 + 20;
+            x2 = x2 + 111 + 20;
+            compter = compter + 1
+        }
+        if (recupchoose == 'Différence') {
+            // ensuite on vérifie l'id du groupe sur lequel on a cliqué, si ce dernier est bon, on rajoute les pays, sinon on ne le fait pas, ainsi nous avons que les pays qui nous intéressent
+            if ((((valeur.NCSI - valeur.DigitalDéveloppement) * 690) / 100) >= 0) {
+                document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="' + ((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100 + '" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="' + (403 + (((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100)) + '" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="' + (396 - (((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100) - 35) + '" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + (valeur.NCSI - valeur.DigitalDéveloppement).toFixed(2) + '%</text>'
+                document.querySelector("#" + key).setAttribute("y", "383.5")
+            }
+            else {
+                document.querySelector('#Group6').innerHTML += '<rect class="barbapapa" id="' + key + '" x="' + x + '" y="38.5" width="111" height="0" fill="url(#paint0_linear_106_302)" stroke="white"></rect><text x="' + x2 + '" y="15" font-family="Arial" font-size="20" text-anchor="middle" fill="white">' + splited + '</text><rect id="' + key + 'hover" class="rectinfo" x="' + x2 + '" rx="5" y="403" width="111" height="55" fill="#FDFDFD"/><text class="rectinfo2" id="' + key + 'texthover" x="' + x2 + '" y="364" font-family="Arial" font-size="20" text-anchor="middle" fill="black">' + (valeur.NCSI - valeur.DigitalDéveloppement).toFixed(2) + '%</text>'
+                document.querySelector("#" + key).setAttribute("height", (0 - ((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100))
+                document.querySelector("#" + key).setAttribute("y", 383.5 - (0 - ((valeur.NCSI - valeur.DigitalDéveloppement) * 345) / 100))
+                document.querySelector("#" + key).setAttribute("fill", "url(#négatifvalues)")
+            }
+            x = x + 111 + 20;
+            x2 = x2 + 111 + 20;
+            compter = compter + 1
+        }
+    });
+    actualisation();
+}

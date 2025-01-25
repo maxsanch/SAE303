@@ -868,3 +868,9 @@ a:hover::before {
 .ouverturehover{
     opacity: 1;
 }
+
+/* bouton reset */
+
+#reset{
+    margin-left: auto;
+}

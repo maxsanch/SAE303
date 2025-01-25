@@ -122,7 +122,6 @@ function actualiser() {
     // affichage pour chaques domaines en fonction du pays choisi
 
     Object.entries(pays[paysaffiche]['AccomplissementsParDomaines']).forEach(([cléPays, dataPays]) => {
-        console.log(cléPays)
         document.querySelector('#'+cléPays).style = "--taille : " + dataPays / 100 + ';';
     })
 
