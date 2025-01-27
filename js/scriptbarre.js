@@ -66,21 +66,21 @@ function actualisation() {
 }
 
 
-/*******************/
-/*******************/
-/****POUR CHANGER ET AFFICHER QUE UN SEUL CONTINENT****/
+/**********************************************************/
+/**********************************************************/
+/******POUR CHANGER ET AFFICHER QUE UN SEUL CONTINENT******/
 /***LA VARIABLE TEST VA CHANGER EN FONCTION DU CONTINENT***/
-/*******************/
-/*******************/
+/**********************************************************/
+/**********************************************************/
 
 
 document.querySelectorAll('.continentsingle').forEach(e => {
 
-    /*******************/
-    /*******************/
+    /********************************/
+    /********************************/
     /***NE CONCERNE PAS LES BARRES***/
-    /*******************/
-    /*******************/
+    /********************************/
+    /********************************/
 
     // changer l'attribue de la stroke au passage de la souris pour rendre joli
 
@@ -113,6 +113,8 @@ document.querySelectorAll('.continentsingle').forEach(e => {
         x = 53.5
         x2 = 109;
         compter = 0;
+
+        console.log(compter)
 
         // réalisation d'un tableau afin de savoir comment transcrir le tout.
 
