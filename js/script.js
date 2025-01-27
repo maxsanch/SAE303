@@ -64,34 +64,6 @@ Object.entries(pays).forEach(([key]) => {
     actualisation();
 });
 
-// fonctions pour avancer et reculer avec le graphique
-
-document.querySelector('#prev').addEventListener('click', reculer)
-document.querySelector('#next').addEventListener('click', avancer)
-
-// a chque clique on ajoute de la valeur a moover qui permet de faire un translate du nombre de fois ou on à appuyé
-let mooved = 0
-function avancer() {
-
-    mooved = mooved + 786;
-    // si mooved est plus grand que la taille de compter (calculé plus tot pour savoir combien en taille font toute les barres a la suite) alors on retourna au début 
-    if (mooved >= compter * 131) {
-        mooved = 0
-    }
-    // translate de moover px pour atteindre ce qu'on veux
-    document.querySelector('#Group6').style = "transform: translateX(-" + mooved + "px);"
-}
-function reculer() {
-    mooved = mooved - 786;
-    // il est inferieur à compter, on va a la fin
-    if (mooved < 0) {
-        mooved = (compter - 6) * 131
-    }
-    // translate de moover px pour atteindre ce qu'on veux
-    document.querySelector('#Group6').style = "transform: translateX(-" + mooved + "px);"
-}
-
-
 // pays par défaut
 
 let paysaffiche = 'France';
