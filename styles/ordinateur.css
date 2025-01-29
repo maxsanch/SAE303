@@ -7,6 +7,7 @@ body {
     color: white;
     overflow-x: hidden;
     margin: 0;
+    width: 100%;
 }
 
 html {
@@ -443,7 +444,6 @@ h2 {
     margin-bottom: 20px;
     transform: translateX(150%);
     transition: 0.7s;
-    overflow-x: hidden;
 }
 
 .explains>p:nth-child(1) {
@@ -898,18 +898,15 @@ a:hover::before {
 .graphique{
     transform: translateX(-150%);
     transition: 1s;
-    overflow-x: hidden;
 }
 
 .leftpour{
     transition: 0.5s;
     transform: translateX(-150%);
-    overflow-x: hidden;
 }
 
 .rightpour{
     transition-delay: 10s;
     transition: 0.5s;
     transform: translateX(150%);
-    overflow-x: hidden;
 }
