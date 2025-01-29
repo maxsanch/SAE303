@@ -4,7 +4,10 @@
 header{
     background: #02000F;
     padding: 10px;
+}
 
+body{
+    overflow-x: hidden;
 }
 
 .parent{
