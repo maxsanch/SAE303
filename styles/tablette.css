@@ -133,11 +133,19 @@ header{
 
 /* styles des boutons suivant et précédent sur mobile et tablette */
 
-.mobilnextandprev{
-    display: flex;
-    align-items: center;
+.nextandprev{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: 40px;
+}
+
+.Nextgr{
+    width: auto;
+}
+
+#reset{
+    margin-left: 0;
 }
 
 .categoriecentre2{

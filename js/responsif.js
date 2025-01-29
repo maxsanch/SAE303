@@ -10,11 +10,6 @@ if (screen.width <= 620) {
     document.querySelector('#totalocéanie').setAttribute('width', '103');
 
     // garder en mémoire le contenu des boutons next et previous afin de les mettre dans un autre endroit sur mobile
-    let memoire = document.querySelector('.nextandprev').innerHTML
-    document.querySelector('.nextandprev').remove();
-    document.querySelector('.mobilnextandprev').innerHTML = memoire
-
-
 
     let memoire2 = document.querySelector('.categoriecentre').innerHTML
     console.log('allo ??')

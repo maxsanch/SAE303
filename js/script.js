@@ -94,7 +94,7 @@ function actualiser() {
     // affichage pour chaques domaines en fonction du pays choisi
 
     Object.entries(pays[paysaffiche]['AccomplissementsParDomaines']).forEach(([cléPays, dataPays]) => {
-        document.querySelector('#'+cléPays).style = "--taille : " + dataPays / 100 + ';';
+        document.querySelector('#' + cléPays).style = "--taille : " + dataPays / 100 + ';';
     })
 
     // lors du hover avec la barre de chargement, faire grandir la barre
@@ -162,3 +162,36 @@ document.querySelectorAll('#domainesder>p').forEach(element => {
         document.querySelector('.explains>ul').innerHTML = infos[element.innerText]
     }
 });
+
+
+/*****************************/
+/*********ANIMATIONS**********/
+/*****************************/
+
+
+
+window.addEventListener('scroll', scrollanimation)
+
+function scrollanimation() {
+    // document.querySelectorAll('.labarresurletéco').forEach(e => {
+    //     console.log(e.getBoundingClientRect().top+" < "+window.innerHeight)
+
+    //     if (e.getBoundingClientRect().top < window.innerHeight) {
+    //         e.style = "height: 100%;";
+    //     }
+    //     else{
+    //         e.style = "height: 0%;";
+    //     }
+    // })
+
+    let graphique = document.querySelectorAll('.graphique')
+
+    graphique.forEach(e => {
+        if (e.getBoundingClientRect().top < (window.innerHeight - 40)) {
+            e.style = "transform: translateX(0);";
+        }
+        else {
+            e.style = "transform: translateX(-150%);";
+        }
+    })
+}

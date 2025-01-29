@@ -457,7 +457,7 @@ h2 {
 .explains::before {
     content: "";
     width: 2px;
-    animation: spawndown 0.5s forwards;
+    transition: 0.5s;
     height: 0;
     position: absolute;
     background: white;
@@ -860,7 +860,6 @@ a:hover::before {
     opacity: 0;
 }
 
-
 .rectinfo2{
     opacity: 0;
 }
@@ -873,4 +872,11 @@ a:hover::before {
 
 #reset{
     margin-left: auto;
+}
+
+/* pour l'animation */
+
+.graphique{
+    transform: translateX(-150%);
+    transition: 1s;
 }
