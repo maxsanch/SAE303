@@ -6,10 +6,6 @@ header{
     padding: 10px;
 }
 
-body{
-    overflow-x: hidden;
-}
-
 .parent{
     padding: 0;
 }

@@ -7,7 +7,6 @@ body {
     color: white;
     overflow-x: hidden;
     margin: 0;
-    width: 100%;
 }
 
 html {
@@ -341,6 +340,7 @@ header {
 .parentcentre {
     width: 85%;
     margin: auto;
+    overflow-x: hidden;
 }
 
 .grid_2 {
@@ -434,6 +434,7 @@ h2 {
 .explications {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* explication des catégories */
@@ -495,6 +496,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 
@@ -720,7 +722,8 @@ a:hover::before {
 
 .heightpourcentage {
     display: flex;
-    flex-direction: column; /* Pour bien gérer le texte et SVG */
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* transotion quadn el trait s'agrandit */
@@ -910,3 +913,4 @@ a:hover::before {
     transition: 0.5s;
     transform: translateX(150%);
 }
+
