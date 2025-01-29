@@ -194,4 +194,44 @@ function scrollanimation() {
             e.style = "transform: translateX(-150%);";
         }
     })
+
+    let explains = document.querySelectorAll('.explains')
+
+    explains.forEach(e => {
+        if (e.getBoundingClientRect().top < (window.innerHeight - 40)) {
+            e.style = "transform: translateX(0);";
+        }
+        else {
+            e.style = "transform: translateX(150%);";
+        }
+    })
+    let bout = document.querySelectorAll('.Nextgr')
+
+    bout.forEach(e => {
+        if (e.getBoundingClientRect().top < (window.innerHeight)) {
+            e.style='--temps: '+Math.random()+'s';
+            e.classList.add('anim');
+        }
+        else {
+            e.classList.remove('anim');
+            
+        }
+    })
+
+    document.querySelectorAll('.leftpour').forEach(e =>{
+        if (e.getBoundingClientRect().top < (window.innerHeight)) {
+            e.style='transform: translateX(0)';
+        }
+        else {
+            e.style='transform: translateX(-150%)';
+        }
+    })
+    document.querySelectorAll('.rightpour').forEach(e =>{
+        if (e.getBoundingClientRect().top < (window.innerHeight)) {
+            e.style='transform: translateX(0)';
+        }
+        else {
+            e.style='transform: translateX(150%)';
+        }
+    })
 }

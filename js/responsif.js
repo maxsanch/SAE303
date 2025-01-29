@@ -12,7 +12,6 @@ if (screen.width <= 620) {
     // garder en mémoire le contenu des boutons next et previous afin de les mettre dans un autre endroit sur mobile
 
     let memoire2 = document.querySelector('.categoriecentre').innerHTML
-    console.log('allo ??')
     document.querySelector('.categoriecentre').remove();
     document.querySelector('.categoriecentre2').innerHTML = memoire2
 }

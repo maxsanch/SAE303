@@ -7,7 +7,6 @@ body {
     color: white;
     overflow-x: hidden;
     margin: 0;
-   
 }
 
 html {
@@ -442,6 +441,8 @@ h2 {
     position: relative;
     margin-top: 20px;
     margin-bottom: 20px;
+    transform: translateX(150%);
+    transition: 0.7s;
 }
 
 .explains>p:nth-child(1) {
@@ -458,6 +459,7 @@ h2 {
     content: "";
     width: 2px;
     transition: 0.5s;
+    animation: forwards 0.7s linear spawndown;
     height: 0;
     position: absolute;
     background: white;
@@ -781,6 +783,22 @@ a:hover::before {
     width: 150px;
     text-align: center;
     cursor: pointer;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.anim{
+    animation-delay: var(--temps);
+    animation: forwards 0.7s anim;
+}
+
+@keyframes anim{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 
 
@@ -879,4 +897,15 @@ a:hover::before {
 .graphique{
     transform: translateX(-150%);
     transition: 1s;
+}
+
+.leftpour{
+    transition: 0.5s;
+    transform: translateX(-150%);
+}
+
+.rightpour{
+    transition-delay: 10s;
+    transition: 0.5s;
+    transform: translateX(150%);
 }
