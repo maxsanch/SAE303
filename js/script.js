@@ -209,12 +209,10 @@ function scrollanimation() {
 
     bout.forEach(e => {
         if (e.getBoundingClientRect().top < (window.innerHeight)) {
-            e.style='--temps: '+Math.random()+'s';
-            e.classList.add('anim');
+            e.classList.add('anim')
         }
         else {
-            e.classList.remove('anim');
-            
+            e.classList.remove('anim')
         }
     })
 
@@ -232,6 +230,23 @@ function scrollanimation() {
         }
         else {
             e.style='transform: translateX(150%)';
+        }
+    })
+    
+    document.querySelectorAll('.cont').forEach(e=>{
+        if (e.getBoundingClientRect().top < (window.innerHeight)) {
+            e.classList.add('anim')
+        }
+        else {
+            e.classList.remove('anim')
+        }
+    })
+    document.querySelectorAll('.domainesingle').forEach(e=>{
+        if (e.getBoundingClientRect().top < (window.innerHeight)) {
+            e.classList.add('anim')
+        }
+        else {
+            e.classList.remove('anim')
         }
     })
 }

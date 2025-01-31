@@ -665,6 +665,9 @@ a:hover::before {
     display: flex;
     align-items: center;
     flex-direction: column;
+    transition: 0.5s;
+    transform: scale(0);
+    transition-delay: var(--temps);
 }
 
 .hautcont {
@@ -697,6 +700,8 @@ a:hover::before {
     flex-direction: column;
     gap: 10px;
     margin: 10px;
+    transform: scale(0);
+    transition: 0.5s;
 }
 
 .color {
@@ -789,21 +794,13 @@ a:hover::before {
     cursor: pointer;
     transform: scale(0);
     transition: 0.5s;
+    transition-delay: var(--temps);
 }
 
 .anim{
-    animation-delay: var(--temps);
-    animation: forwards 0.7s anim;
+    transform: scale(1);
 }
 
-@keyframes anim{
-    from{
-        transform: scale(0);
-    }
-    to{
-        transform: scale(1);
-    }
-}
 
 
 /* graphique polaire */
