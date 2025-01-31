@@ -409,6 +409,7 @@ function resetgraph() {
     x = 53.5
     x2 = 109;
     compter = 0;
+    test = "tout"
 
     // on remet tout au début
     document.querySelector('#Group6').style = "transform: translateX(0);"

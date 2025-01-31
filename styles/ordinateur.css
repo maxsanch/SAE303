@@ -340,7 +340,6 @@ header {
 .parentcentre {
     width: 85%;
     margin: auto;
-    overflow-x: hidden;
 }
 
 .grid_2 {
@@ -434,7 +433,7 @@ h2 {
 .explications {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* explication des catégories */
@@ -496,7 +495,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -627,6 +626,7 @@ a:hover::before {
 .pourcentage_page {
     position: relative;
     min-height: 100vh;
+    overflow-y: hidden;
 }
 
 /* fond flou */
@@ -723,7 +723,7 @@ a:hover::before {
 .heightpourcentage {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* transotion quadn el trait s'agrandit */
@@ -914,3 +914,12 @@ a:hover::before {
     transform: translateX(150%);
 }
 
+.parentglobal{
+    overflow-x: hidden;
+}
+
+/* pour que ca marche bien sur mobil mais aussi en général */
+
+.pourcentage_single_pays{
+    overflow-x: hidden;
+}
