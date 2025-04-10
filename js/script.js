@@ -138,7 +138,6 @@ document.querySelectorAll('.deroulant').forEach(e => {
 
 document.querySelector('.hamburger').addEventListener('click', ouvrirheader)
 
-
 function ouvrirheader() {
     document.querySelector('.links').classList.toggle('openlinks')
 }

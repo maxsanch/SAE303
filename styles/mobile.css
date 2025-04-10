@@ -1,65 +1,70 @@
 /* changement de la tailel des polices sur téléphone */
 
-h2{
+h2 {
     font-size: 22px;
 }
 
-.titre>h1{
+.titre>h1 {
     font-size: 35px;
 }
-.boutons{
+
+.boutons {
     font-size: 16px;
 }
 
 /* rétrécissement des boutons */
 
-.b1{
+.b1 {
     padding-inline: 20px;
 }
-.b2{
+
+.b2 {
     padding-inline: 20px;
 }
 
 /* modification du haut de la page */
 
-.hautpage1{
+.hautpage1 {
     min-height: 0vh;
 }
 
-.parentcentre{
+.parentcentre {
     margin-top: 0;
     margin-bottom: 30px;
 }
 
-.pourcent{
+.pourcent {
     font-size: 20px;
 }
 
 
 /* boutons suivant et précédent un peu plus petits */
-.next{
+.next {
     transform: scale(0.6);
 }
-.prev{
+
+.prev {
     transform: scale(0.6);
 }
+
 /* taille de la terre */
-.planete{
+.planete {
     min-height: 30vh;
 }
 
-.grid_2{
+.grid_2 {
     display: block;
 }
+
 /* graphiqeu polaire agrandi afin de ne pas paraitre miniature */
 
-#polar{
+#polar {
     transform: scale(1.1);
 }
 
 
 
-.categoriecentre2{
+.categoriecentre2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: end;

@@ -45,6 +45,7 @@ let transcript = {
 }
 
 let initialsomme = {};
+
 let nbPays2 = {};
 
 Object.entries(pays).forEach(([cléPays, dataPays]) => {
